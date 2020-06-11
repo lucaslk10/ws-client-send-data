@@ -121,7 +121,7 @@ try {
    * Basically this microservice will execute instructions send in the 'content' like
    * an Database query, then will send back to the WebSocket messages.
    *
-   * 'ws-server-api' do the rest. Check github repo @lucaslk10 / 'ws-server-api'
+   * 'ws-integrate-api' do the rest. Check github repo @lucaslk10 / 'ws-integrate-api'
    *
    * @param uId Unique ID from the requisition
    * @param content Instructions to do in the Data Microservice

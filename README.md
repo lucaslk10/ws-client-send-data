@@ -5,7 +5,7 @@
 
 ## Description
 
-The purpose of this application is to runs a WebSocket Client that triggers a call to an external service and return data to WebSocket, that in the end will return in the API from the 'ws-server-api' repo example.
+The purpose of this application is to runs a WebSocket Client that triggers a call to an external service and return data to WebSocket, that in the end will return in the API from the 'ws-integrate-api' repo example.
 
 WebSockets are very useful and fast, in any kind of situations that you want to create communication trough differente services.
 
@@ -15,7 +15,7 @@ That's a simple implementation, not using SSL(WSS) and not doing WS Handshake, b
 
 TypeScript - You guys can know what type of data any methods expects to receive/return.
 
-WebSocket - Creates an bidirectional communication. You connect only once and can transfer data how much times you want and fast :)
+WebSocket - Creates an bidirectional communication. You connect only once and can transfer data how much times you want and fast :) (I prefered use WebSocket and not Socket.io for WebSocket being a native library for WS Implementations, so it has performance gains)
 
 ## Installation
 
