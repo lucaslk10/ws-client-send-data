@@ -1,24 +1,23 @@
-import { post } from "request-promise";
-import { sign } from "jsonwebtoken";
-import * as dotenv from "dotenv";
+import { post } from 'request-promise';
+import { sign } from 'jsonwebtoken';
+import * as dotenv from 'dotenv';
 
 export class HelpersService {
   /**
    * Creates a valid JWT token.
    * - It's necessary to communicate with another microservices.
    */
-  createJwtToken = () =>
-    sign({ email: "WebSocket Microservice" }, "brain", { expiresIn: "12h" });
+  // createJwtToken = () => sign({ email: 'WebSocket Microservice' }, '', { expiresIn: '12h' });
 
-  executeQuery = async (requestId: string, content: string) =>
-    await post("https://stackqa.dimensiondata.com:3023/call-oracle/", {
-      json: true,
-      body: { requestId, content },
-      auth: {
-        bearer:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IldlYlNvY2tldCBGbHVpZyIsImlhdCI6MTU5MTIxNTQ0N30.nPVbSPIKG05iVBFDNRGtyiA5QB0CQTqmxcoftkDswkE",
-      },
-    });
+  // executeQuery = async (requestId: string, content: string) =>
+  //   await post('ENDPOINT_TO_CALL_DB', {
+  //     json: true,
+  //     body: { requestId, content },
+  //     auth: {
+  //       bearer:
+  //         this.createJwtToken(),
+  //     },
+  //   });
 
   isJson(string: string) {
     try {
@@ -31,15 +30,15 @@ export class HelpersService {
   defineEnv() {
     dotenv.config();
     switch (process.env.NODE_ENV) {
-      case "DEV":
+      case 'DEV':
         dotenv.config({ path: `${process.cwd()}/.env.dev` });
         break;
 
-      case "QA":
+      case 'QA':
         dotenv.config({ path: `${process.cwd()}/.env.qa` });
         break;
 
-      case "PROD":
+      case 'PROD':
         dotenv.config({ path: `${process.cwd()}/.env.prod` });
         break;
 
